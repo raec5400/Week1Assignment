@@ -15,7 +15,7 @@ public class PizzaCost {
         tops = scan.nextInt();
         price = ingredients*size + toppings*tops + labor + util;
         System.out.format("The pizza costs $%.2f\n", price);
-        
+        System.out.println("Thank you for your business");
     }
     
 }
