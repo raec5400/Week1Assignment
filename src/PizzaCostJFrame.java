@@ -109,6 +109,7 @@ public class PizzaCostJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
         pizzasize = Double.parseDouble(size.getText());
+        pizzatoppings = Double.parseDouble(toppings.getText());
         
         }catch(Exception e){
             JOptionPane.showMessageDialog(this, "Error - must enter a number");
