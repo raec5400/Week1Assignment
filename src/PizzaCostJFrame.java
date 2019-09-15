@@ -1,20 +1,15 @@
 
 import javax.swing.JOptionPane;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author raec5400
- */
 public class PizzaCostJFrame extends javax.swing.JFrame {
 
     double pizzasize, pizzatoppings;
-    
+    double labor = 1.50;
+    double util = 0.75;
+    double ingredients = 0.50;
+    double tops = 0.75;
+    double price;
+
     public PizzaCostJFrame() {
         initComponents();
     }
@@ -40,6 +35,12 @@ public class PizzaCostJFrame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Enter Pizza Size:");
+
+        size.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sizeActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Enter Number of Toppings:");
@@ -107,15 +108,22 @@ public class PizzaCostJFrame extends javax.swing.JFrame {
 
     private void FinalCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalCostActionPerformed
         // TODO add your handling code here:
-        try{
-        pizzasize = Double.parseDouble(size.getText());
-        pizzatoppings = Double.parseDouble(toppings.getText());
-        
-        }catch(Exception e){
+        try {
+            pizzasize = Double.parseDouble(size.getText());
+            pizzatoppings = Double.parseDouble(toppings.getText());
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error - must enter a number");
             return; //stop here
         }
+        price = pizzasize*ingredients + pizzatoppings*tops + labor + util;
+        
+
     }//GEN-LAST:event_FinalCostActionPerformed
+
+    private void sizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sizeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sizeActionPerformed
 
     /**
      * @param args the command line arguments
