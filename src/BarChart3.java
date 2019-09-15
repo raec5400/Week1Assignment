@@ -16,12 +16,16 @@ public class BarChart3 {
             pb[i] = new Bar();
             System.out.print("Enter value of Bar " + (i + 1) + ": ");
             pb[i].height = s.nextInt();
+            pb[i].yloc = 50 + (100 * i);
         }
         
         Pen p = new StandardPen(new SketchPadWindow(640, 480));
         p.up();
         p.move(-320);
         p.down();
+        p.setDirection(0);
+        p.setWidth(50);
+        p.move(pb);
         
     }
 
