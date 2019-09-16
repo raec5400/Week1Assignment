@@ -117,7 +117,7 @@ public class PizzaCostJFrame extends javax.swing.JFrame {
             return; //stop here
         }
         price = pizzasize*ingredients + pizzatoppings*tops + labor + util;
-        
+        outputlable.setText(String.format("The final cost is: $%.2f ", price));
 
     }//GEN-LAST:event_FinalCostActionPerformed
 
