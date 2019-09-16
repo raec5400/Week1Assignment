@@ -45,8 +45,8 @@ public class BarChart3 {
     }
 
     public static void makebar(Pen p, PenBar pb, int x, int y, int w, Color c) {
-        pb.xloc = x;
-        pb.yloc = y;
+        pb.x = x;
+        pb.y = y;
         pb.width = w;
         pb.col = c;
         pb.draw(p);
